@@ -11,7 +11,7 @@ interface Actor {
   name: string;
   profile_path: string | null;
   known_for_department: string;
-  movies: Movie[]; // Added movies property
+  movies: Movie[];
 }
 
 const FavoriteActorPage: React.FC = () => {
