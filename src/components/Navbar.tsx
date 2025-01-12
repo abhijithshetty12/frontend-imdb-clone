@@ -164,17 +164,13 @@ const Navbar = () => {
             )}
           </form>
         </div>
-
-        {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <Menu className="w-7 h-7 text-white" />
           </button>
         </div>
 
-        {/* Desktop Navbar Items */}
         <div className="hidden md:flex items-center gap-10">
-          {/* Navbar Links */}
           <div className="flex items-center gap-8">
             {navItems.map((item) => (
               <Link
@@ -194,7 +190,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
       {isMenuOpen && (
         <div className="md:hidden bg-black text-white p-6">
           <form onSubmit={handleSearch} className="relative mb-6">
