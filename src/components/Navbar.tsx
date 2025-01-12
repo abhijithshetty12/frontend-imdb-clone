@@ -196,7 +196,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Dropdown */}
       {isMenuOpen && (
-        <div className="md:hidden bg-gray-900 text-white p-6">
+        <div className="md:hidden bg-black text-white p-6">
           <form onSubmit={handleSearch} className="relative mb-6">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
@@ -207,6 +207,14 @@ const Navbar = () => {
               className="bg-gray-800 text-white pl-10 pr-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-yellow-500 w-full"
             />
           </form>
+
+          <Link
+            to="/profile"
+            className="block text-gray-300 hover:text-yellow-500 py-3"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Profile
+          </Link>
 
           {navItems.map((item) => (
             <Link
