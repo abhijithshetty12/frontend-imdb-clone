@@ -206,7 +206,7 @@ const MovieDetails = () => {
   if (loading) {
     return (
       <div className="text-center">
-        <div className="loader"></div> {/* You can style this loader or use any existing one */}
+        <div className="loader"></div>
         <p className="text-xl">Loading movie details...</p>
       </div>
     );
@@ -333,7 +333,6 @@ const MovieDetails = () => {
           ))}
         </Swiper>
       </section>
-      {/* Movie Info Section */}
       <div>
         <div className="sticky top-24 space-y-6">
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6">
@@ -361,9 +360,6 @@ const MovieDetails = () => {
           </div>
         </div>
       </div>
-
-
-      {/* Cast Section */}
       <section className="mb-12">
         <h2 className="text-2xl font-bold mb-6">Cast</h2>
         <div className="grid grid-cols-2 gap-6">
