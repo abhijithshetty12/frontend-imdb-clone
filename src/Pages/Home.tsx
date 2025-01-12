@@ -42,7 +42,7 @@ const Home = () => {
               icon: TrendingUp,
               label: "Trending",
               path: "/movies?sort=trending",
-              color: "bg-yellow-500", // Darker shade for dark theme
+              color: "bg-yellow-500",
             },
             {
               icon: Star,
