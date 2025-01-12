@@ -271,13 +271,13 @@ const MovieList = () => {
         </h1>
         <button
           className="flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition"
-          onClick={() => setShowFilters(!showFilters)} // Toggle filter visibility
+          onClick={() => setShowFilters(!showFilters)}
         >
           <SlidersHorizontal /> Filters
         </button>
       </div>
 
-      {showFilters && ( // Conditional rendering of filter options
+      {showFilters && ( 
         <div className="mb-4">
           <select
             value={selectedGenre}
