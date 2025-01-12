@@ -13,10 +13,10 @@ const LoginModal: React.FC = () => {
     e.preventDefault();
 
     try {
-      await login(email, password); // If successful, no error is thrown
+      await login(email, password);
       setError('');
       alert('Login successful!');
-      navigate('/home'); // Navigate to home page
+      navigate('/home');
     } catch (err: any) {
       setError(err.message || 'Invalid email or password.');
     }
