@@ -61,18 +61,17 @@
   }
 }
 body {
-  background-color: #121212; /* Dark background */
-  color: #ffffff; /* White text */
-  font-family: 'Arial', sans-serif; /* Use a clean sans-serif font */
+  background-color: #121212;
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
 }
 
 h1, h2, h3 {
-  font-family: 'Arial', sans-serif; /* Consistent font for headings */
+  font-family: 'Arial', sans-serif;
 }
 
-/* Profile Page Styles */
 .profile-page {
   display: flex;
   padding: 20px;
@@ -88,15 +87,15 @@ h1, h2, h3 {
 }
 
 .watchlist-section, .reviews-section, .recommendations-section {
-  background-color: #1e1e1e; /* Darker background for sections */
+  background-color: #1e1e1e;
   padding: 15px;
   border-radius: 8px;
   margin-bottom: 20px;
 }
 
 button {
-  background-color: #ffcc00; /* IMDb yellow */
-  color: #000; /* Black text */
+  background-color: #ffcc00;
+  color: #000;
   border: none;
   border-radius: 5px;
   padding: 10px 15px;
@@ -105,7 +104,7 @@ button {
 }
 
 button:hover {
-  background-color: #e6b800; /* Darker yellow on hover */
+  background-color: #e6b800; 
 }
 
 .text-gray-500 {
