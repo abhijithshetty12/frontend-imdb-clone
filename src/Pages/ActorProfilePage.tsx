@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom'; // Import Link for navigation
+import { Link } from 'react-router-dom';
 
-// Define the Actor type
 interface Actor {
   id: number;
   name: string;
@@ -12,13 +11,13 @@ interface Actor {
 const ActorProfiles = () => {
   const [actors, setActors] = useState<Actor[]>([]);
   const [loading, setLoading] = useState(true);
-  const [movies, setMovies] = useState<{ [key: number]: string[] }>({}); // Store movies for each actor
+  const [movies, setMovies] = useState<{ [key: number]: string[] }>({});
 
   useEffect(() => {
     const fetchPopularActors = async () => {
       try {
-        const response = await axios.get('https://api.themoviedb.org/3/person/popular?api_key=734a09c1281680980a71703eb69d9571'); // Using provided TMDB API key
-        setActors(response.data.results.slice(0, 20)); // Get the first 4 actors
+        const response = await axios.get('https://api.themoviedb.org/3/person/popular?api_key=734a09c1281680980a71703eb69d9571');
+        setActors(response.data.results.slice(0, 20));
         setLoading(false);
       } catch (error) {
         console.error('Error fetching popular actors:', error);
@@ -34,8 +33,8 @@ const ActorProfiles = () => {
       const actorMovies = {};
       for (const actor of actors) {
         try {
-          const response = await axios.get(`https://api.themoviedb.org/3/person/${actor.id}/movie_credits?api_key=734a09c1281680980a71703eb69d9571`); // Using provided TMDB API key
-          actorMovies[actor.id] = response.data.cast.map(movie => movie.title); // Store movie titles
+          const response = await axios.get(`https://api.themoviedb.org/3/person/${actor.id}/movie_credits?api_key=734a09c1281680980a71703eb69d9571`);
+          actorMovies[actor.id] = response.data.cast.map(movie => movie.title);
         } catch (error) {
           console.error(`Error fetching movies for actor ${actor.id}:`, error);
         }
@@ -49,7 +48,7 @@ const ActorProfiles = () => {
   }, [actors]);
 
   if (loading) {
-    return <div>Loading...</div>; // Loading state
+    return <div>Loading...</div>;
   }
 
   return (
