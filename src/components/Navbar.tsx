@@ -92,83 +92,84 @@ const Navbar = () => {
             <Film className="w-8 h-8 text-yellow-500" />
             <span className="text-xl font-bold text-white">MovieDB</span>
           </Link>
-          <form onSubmit={handleSearch} className="relative w-80">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search movies, TV shows, actors..."
-              className="bg-black/80 text-white pl-10 pr-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-yellow-500 w-full"
-            />
-            {loading && <div className="absolute top-full left-0 w-full bg-black text-white p-2 rounded-b-lg">Loading...</div>}
-            {error && <div className="absolute top-full left-0 w-full bg-red-600 text-white p-2 rounded-b-lg">{error}</div>}
-            {searchResults.length > 0 && (
-              <ul className="absolute bg-gray-800 text-white w-full rounded-lg shadow-xl max-h-60 overflow-y-auto mt-2">
-                {movies.length > 0 && (
-                  <li>
-                    <h3 className="bg-gray-700 p-3 text-white font-semibold">Movies</h3>
-                    {movies.map((result) => (
-                      <li
-                        key={result.id}
-                        onClick={() => handleResultClick(result.id, result.media_type)}
-                        className="p-3 hover:bg-gray-700 cursor-pointer transition duration-200"
-                      >
-                        <div className="flex items-center">
-                          {result.poster_path && (
-                            <img
-                              src={`https://image.tmdb.org/t/p/w92${result.poster_path}`}
-                              alt={result.title || result.name}
-                              className="inline-block mr-3 w-16 h-24 rounded-lg"
-                            />
-                          )}
-                          <span className="text-sm font-semibold">{result.title || result.name}</span>
-                          {result.media_type === 'movie' && result.release_date && (
-                            <span className="text-xs text-gray-400 ml-2">({new Date(result.release_date).getFullYear()})</span>
-                          )}
-                        </div>
-                      </li>
-                    ))}
-                  </li>
-                )}
-                {tvShows.length > 0 && (
-                  <li>
-                    <h3 className="bg-gray-700 p-3 text-white font-semibold">TV Shows</h3>
-                    {tvShows.map((result) => (
-                      <li
-                        key={result.id}
-                        onClick={() => handleResultClick(result.id, result.media_type)}
-                        className="p-3 hover:bg-gray-700 cursor-pointer transition duration-200"
-                      >
-                        <div>{result.title || result.name}</div>
-                      </li>
-                    ))}
-                  </li>
-                )}
-                {actors.length > 0 && (
-                  <li>
-                    <h3 className="bg-gray-700 p-3 text-white font-semibold">Actors</h3>
-                    {actors.map((result) => (
-                      <li
-                        key={result.id}
-                        onClick={() => handleResultClick(result.id, result.media_type)}
-                        className="p-3 hover:bg-gray-700 cursor-pointer transition duration-200"
-                      >
-                        <div>{result.name}</div>
-                      </li>
-                    ))}
-                  </li>
-                )}
-              </ul>
-            )}
-          </form>
+          <div className="hidden md:block">
+            <form onSubmit={handleSearch} className="relative w-80">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search movies, TV shows, actors..."
+                className="bg-black/80 text-white pl-10 pr-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-yellow-500 w-full"
+              />
+              {loading && <div className="absolute top-full left-0 w-full bg-black text-white p-2 rounded-b-lg">Loading...</div>}
+              {error && <div className="absolute top-full left-0 w-full bg-red-600 text-white p-2 rounded-b-lg">{error}</div>}
+              {searchResults.length > 0 && (
+                <ul className="absolute bg-gray-800 text-white w-full rounded-lg shadow-xl max-h-60 overflow-y-auto mt-2">
+                  {movies.length > 0 && (
+                    <li>
+                      <h3 className="bg-gray-700 p-3 text-white font-semibold">Movies</h3>
+                      {movies.map((result) => (
+                        <li
+                          key={result.id}
+                          onClick={() => handleResultClick(result.id, result.media_type)}
+                          className="p-3 hover:bg-gray-700 cursor-pointer transition duration-200"
+                        >
+                          <div className="flex items-center">
+                            {result.poster_path && (
+                              <img
+                                src={`https://image.tmdb.org/t/p/w92${result.poster_path}`}
+                                alt={result.title || result.name}
+                                className="inline-block mr-3 w-16 h-24 rounded-lg"
+                              />
+                            )}
+                            <span className="text-sm font-semibold">{result.title || result.name}</span>
+                            {result.media_type === 'movie' && result.release_date && (
+                              <span className="text-xs text-gray-400 ml-2">({new Date(result.release_date).getFullYear()})</span>
+                            )}
+                          </div>
+                        </li>
+                      ))}
+                    </li>
+                  )}
+                  {tvShows.length > 0 && (
+                    <li>
+                      <h3 className="bg-gray-700 p-3 text-white font-semibold">TV Shows</h3>
+                      {tvShows.map((result) => (
+                        <li
+                          key={result.id}
+                          onClick={() => handleResultClick(result.id, result.media_type)}
+                          className="p-3 hover:bg-gray-700 cursor-pointer transition duration-200"
+                        >
+                          <div>{result.title || result.name}</div>
+                        </li>
+                      ))}
+                    </li>
+                  )}
+                  {actors.length > 0 && (
+                    <li>
+                      <h3 className="bg-gray-700 p-3 text-white font-semibold">Actors</h3>
+                      {actors.map((result) => (
+                        <li
+                          key={result.id}
+                          onClick={() => handleResultClick(result.id, result.media_type)}
+                          className="p-3 hover:bg-gray-700 cursor-pointer transition duration-200"
+                        >
+                          <div>{result.name}</div>
+                        </li>
+                      ))}
+                    </li>
+                  )}
+                </ul>
+              )}
+            </form>
+          </div>
         </div>
         <div className="md:hidden">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <Menu className="w-7 h-7 text-white" />
           </button>
         </div>
-
         <div className="hidden md:flex items-center gap-10">
           <div className="flex items-center gap-8">
             {navItems.map((item) => (
@@ -188,7 +189,6 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-
       {isMenuOpen && (
         <div className="md:hidden bg-black text-white p-6">
           <form onSubmit={handleSearch} className="relative mb-6">
