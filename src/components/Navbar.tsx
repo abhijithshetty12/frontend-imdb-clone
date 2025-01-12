@@ -87,7 +87,6 @@ const Navbar = () => {
   return (
     <nav className="bg-black/70 backdrop-blur-md border-b border-zinc-800 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-        {/* Logo, Title, and Search Bar */}
         <div className="flex items-center gap-4">
           <Link to="/home" className="flex items-center gap-2">
             <Film className="w-8 h-8 text-yellow-500" />
