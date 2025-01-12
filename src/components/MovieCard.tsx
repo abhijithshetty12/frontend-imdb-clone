@@ -35,7 +35,6 @@ const MovieCard = ({ title, vote_average, backdrop_path, release_date, genre_ids
             const trailer = data.results.find(video => video.type === 'Trailer');
             if (trailer) {
                 setTrailerUrl(`https://www.youtube.com/watch?v=${trailer.key}`);
-                // Logic to play the trailer (e.g., open a modal or play in an iframe)
             }
         }
     };
@@ -46,7 +45,7 @@ const MovieCard = ({ title, vote_average, backdrop_path, release_date, genre_ids
 
     const handleMouseLeave = () => {
         setIsPlaying(false);
-        setTrailerUrl(''); // Clear the trailer URL when not hovering
+        setTrailerUrl('');
     };
 
     return (
