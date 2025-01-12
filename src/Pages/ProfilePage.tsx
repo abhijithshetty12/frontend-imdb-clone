@@ -171,7 +171,6 @@ const ProfilePage = () => {
       let imageUrl = profilePicture;
 
       if (typeof profilePicture === 'object' && profilePicture instanceof File) {
-        // Change the storage reference to /users/{user.uid}/profilePicture
         const storageRef = ref(storage, `users/${user.uid}/profilePicture`);
         const snapshot = await uploadBytes(storageRef, profilePicture);
         imageUrl = await getDownloadURL(snapshot.ref);
