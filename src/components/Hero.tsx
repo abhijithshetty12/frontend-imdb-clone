@@ -55,7 +55,7 @@ const Hero = () => {
           backgroundImage: `url('${movie?.backdrop_path ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}` : ''}')`,
         }}
       >
-        <div className="absolute inset-0 bg-black/30" /> {/* Removed backdrop-blur class */}
+        <div className="absolute inset-0 bg-black/30" />
       </div>
 
       <div className="relative container mx-auto px-4 h-full flex items-center">
