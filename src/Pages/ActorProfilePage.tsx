@@ -17,7 +17,7 @@ const ActorProfiles = () => {
     const fetchPopularActors = async () => {
       try {
         const response = await axios.get('https://api.themoviedb.org/3/person/popular?api_key=734a09c1281680980a71703eb69d9571');
-        setActors(response.data.results.slice(0, 20));
+        setActors(response.data.results.slice(0, 100));
         setLoading(false);
       } catch (error) {
         console.error('Error fetching popular actors:', error);
